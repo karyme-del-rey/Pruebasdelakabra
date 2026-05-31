@@ -1,0 +1,99 @@
+%% =========================================================================
+%% main.tex - Archivo Maestro del Tratado de Polímeros
+%% =========================================================================
+
+\documentclass[twoside,11pt,a4paper]{book}
+
+% Carga del preámbulo externo con todas las configuraciones estéticas y paquetes
+\input{preamble}
+
+\begin{document}
+
+% -------------------------------------------------------------------------
+% PÁGINAS PRELIMINARES
+% -------------------------------------------------------------------------
+\frontmatter
+
+% Portada Premium Institucional
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\scshape\LARGE Universidad de Ciencia y Tecnología \par}
+    \vspace{1.5cm}
+    {\huge\bfseries Tratado de Ciencia e Ingeniería de Polímeros \par}
+    \vspace{0.5cm}
+    {\Large\itshape De la Estructura Molecular a la Sostenibilidad Industrial \par}
+    \vspace{2cm}
+    {\Large\bfseries [Nombre del Autor / Filiación Institucional] \par}
+    \vfill
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[line width=1.5pt, color=teal] ($(current page.south west) + (1.5cm, 1.5cm)$) rectangle ($(current page.north east) - (1.5cm, 1.5cm)$);
+    \end{tikzpicture}
+    {\large \today \par}
+\end{titlepage}
+
+% Agradecimientos y Dedicatoria
+\chapter*{Dedicatoria}
+\thispagestyle{empty}
+\begin{flushright}
+    \itshape
+    A todos aquellos estudiantes e investigadores\\
+    que buscan comprender el fascinante mundo macromolecular\\
+    y aplicar la ciencia de materiales para un futuro sostenible.
+\end{flushright}
+
+% Resumen / Abstract
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+El presente tratado constituye una monografía académica avanzada sobre la ciencia, ingeniería y sostenibilidad de los materiales poliméricos. Estructurado en 16 capítulos modulares, el documento abarca de manera cuantitativa las bases fundamentales microscópicas —como la conformación molecular, la termodinámica de soluciones poliméricas bajo la teoría de Flory-Huggins y la cinética de polimerización— conectándolas rigurosamente con sus propiedades mecánicas viscoelásticas, térmicas y los métodos industriales de procesamiento más extendidos. Adicionalmente, se discute el impacto ecológico global de los plásticos, profundizando en las tecnologías avanzadas de reciclaje mecánico y químico, y estableciendo las tendencias de vanguardia como vitrímeros y polímeros autorreparables.
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+This treatise represents an advanced academic monograph on the science, engineering, and sustainability of polymeric materials. Structured in 16 modular chapters, it quantitatively covers fundamental microscopic properties —such as macromolecular conformation, Flory-Huggins solution thermodynamics, and polymerization kinetics— and rigorously connects them to macroscopic viscoelastic mechanical and thermal properties, and industrial processing methods. Furthermore, the global ecological impact of plastics is addressed, thoroughly examining advanced mechanical and chemical recycling technologies, and outlining state-of-the-art research frontiers such as vitrimers and self-healing polymers.
+
+% Índices generales
+\tableofcontents
+\listoffigures
+\listoftables
+
+% -------------------------------------------------------------------------
+% CUERPO PRINCIPAL DEL LIBRO
+% -------------------------------------------------------------------------
+\mainmatter
+
+\include{capitulos/cap01}
+\include{capitulos/cap02}
+\include{capitulos/cap03}
+\include{capitulos/cap04}
+\include{capitulos/cap05}
+\include{capitulos/cap06}
+\include{capitulos/cap07}
+\include{capitulos/cap08}
+\include{capitulos/cap09}
+\include{capitulos/cap10}
+\include{capitulos/cap11}
+\include{capitulos/cap12}
+\include{capitulos/cap13}
+\include{capitulos/cap14}
+\include{capitulos/cap15}
+\include{capitulos/cap16}
+
+% -------------------------------------------------------------------------
+% SECCIONES FINALES
+% -------------------------------------------------------------------------
+\backmatter
+
+% Conclusiones Generales
+\chapter{Conclusiones Generales}
+El estudio sistémico de los polímeros desde su escala nanométrica hasta sus aplicaciones macroscópicas revela la interconexión crítica entre la estructura química y el rendimiento tecnológico del material. La transición hacia una economía circular en la industria de polímeros exige la combinación de ciencias básicas (química verde y termodinámica) y tecnologías avanzadas de reciclaje químico. La próxima revolución en ciencia de materiales poliméricos no se limitará a la invención de nuevas resinas, sino al diseño de materiales dinámicos e inteligentes que mitiguen el impacto ambiental global.
+
+% Referencias Bibliográficas
+\bibliographystyle{ieeetr}
+\bibliography{bibliografia}
+
+% Apéndices
+\appendix
+\include{capitulos/apendiceA}
+\include{capitulos/apendiceB}
+
+\end{document}

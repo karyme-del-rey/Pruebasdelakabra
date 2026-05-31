@@ -1,0 +1,40 @@
+\chapter{Propiedades Físicas y Termodinámica de Soluciones Poliméricas}
+\label{cap:fisica}
+
+La física de las macromoléculas en disolución difiere drásticamente de la de moléculas ordinarias debido al enorme tamaño de sus cadenas. La gran cantidad de conformaciones geométricas posibles para una sola molécula en solución reduce la ganancia entrópica de la mezcla, haciendo que los polímeros sean difíciles de disolver.
+
+\section{Teoría de Red de Flory-Huggins}
+
+Paul Flory y Maurice Huggins dedujeron de manera independiente la termodinámica del mezclado de soluciones poliméricas basándose en un modelo de red cristalina tridimensional. La energía libre de mezcla de Flory-Huggins ($\Delta G_m$) se expresa mediante la siguiente ecuación:
+\begin{equation}
+    \Delta G_m = R T \left[ n_1 \ln \phi_1 + n_2 \ln \phi_2 + \chi_{12} n_1 \phi_2 \right]
+    \label{eq:flory_huggins}
+\end{equation}
+donde:
+\begin{itemize}
+    \item $n_1$ es el número de moles de solvente, y $n_2$ es el número de moles de polímero.
+    \item $\phi_1$ y $\phi_2$ son las fracciones en volumen correspondientes del solvente y el polímero.
+    \item $\chi_{12}$ es el parámetro adimensional de interacción de Flory-Huggins, que cuantifica la entalpía del mezclado por interacciones locales solvente-polímero.
+\end{itemize}
+
+Dado que el volumen del polímero es enorme, $\phi_2$ es mucho mayor que su fracción molar $x_2$. El término de la entropía combinatoria es muy desfavorable debido al número extremadamente bajo de moles $n_2$ del polímero. Si el parámetro de interacción $\chi_{12}$ es positivo y superior a un valor crítico ($\chi_{\text{crit}} \approx 0.5$), el polímero será insoluble.
+
+\section{Determinación del Peso Molecular}
+
+Existen diversos métodos analíticos clásicos para medir los promedios de pesos moleculares descritos en el Capítulo \ref{cap:intro}:
+
+\subsection{Osmometría de Membrana}
+Es un método absoluto para calcular el peso molecular promedio en número ($M_n$). Utilizando el desarrollo del virial de la presión osmótica ($\Pi$) en soluciones poliméricas diluidas:
+\begin{equation}
+    \frac{\Pi}{c} = R T \left( \frac{1}{M_n} + A_2 c + A_3 c^2 + \dots \right)
+    \label{eq:osmometria}
+\end{equation}
+Graficando $\frac{\Pi}{c}$ en función de la concentración $c$ y extrapolando a dilución infinita ($c \to 0$), la intersección con el eje $y$ permite calcular directamente $M_n$. La pendiente de la recta proporciona el segundo coeficiente del virial ($A_2$), que describe la calidad del solvente.
+
+\subsection{Viscosimetría de Soluciones Diluidas}
+Es un método relativo muy simple y económico para determinar el peso molecular promedio viscosimétrico ($M_v$). Relaciona la viscosidad intrínseca del polímero ($[\eta]$) con su peso molecular mediante la conocida ecuación de Mark-Houwink-Sakurada:
+\begin{equation}
+    [\eta] = K M_v^a
+    \label{eq:mark_houwink}
+\end{equation}
+donde $K$ y $a$ son constantes empíricas dependientes de la temperatura, la naturaleza química del polímero y la del disolvente. Un valor de exponente $a \approx 0.5$ representa un solvente ideal ($\theta$-solvente), mientras que $a \approx 0.8$ denota un solvente excelente donde el ovillo polimérico se encuentra totalmente expandido.

@@ -1,0 +1,68 @@
+\chapter{Clasificación de los Materiales Poliméricos}
+\label{cap:clasificacion}
+
+La extrema diversidad en las propiedades y aplicaciones de los polímeros requiere un orden sistemático multidimensional. No existe un único criterio taxonómico; en su lugar, clasificamos los materiales poliméricos en función de cinco dimensiones críticas: origen, arquitectura macromolecular, comportamiento térmico-mecánico, composición química de la cadena y mecanismo de síntesis.
+
+\section{Clasificación por Origen}
+
+\begin{description}
+    \item[Polímeros Naturales:] Macromoléculas producidas directamente por organismos vivos en procesos biológicos. Ejemplos fundamentales son el ADN, el ARN, la celulosa, el almidón, las proteínas (colágeno, seda) y el caucho natural (poliisopreno).
+    \item[Polímeros Semisintéticos:] Obtenidos mediante la modificación química controlada de polímeros naturales con el fin de mejorar sus propiedades de procesabilidad o estabilidad. El acetato de celulosa, el celuloide y el caucho vulcanizado son ejemplos históricos representativos.
+    \item[Polímeros Sintéticos:] Creados artificialmente en reactores a partir de compuestos de bajo peso molecular de origen petroquímico o renovable. Polietileno, poliésteres y resinas epoxi corresponden a este grupo.
+\end{description}
+
+\section{Clasificación por Arquitectura Macromolecular}
+
+La disposición espacial y ramificación de los enlaces químicos en las cadenas principales define radicalmente el volumen ocupado por el polímero y su capacidad de empaquetamiento (cristalinidad):
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        % Lineal
+        \draw[thick, teal] (0,3) -- (4,3);
+        \node at (2,2.6) {\small Lineal};
+        % Ramificado
+        \draw[thick, teal] (6,3) -- (10,3);
+        \draw[thick, teal] (7.5,3) -- (8,2.2);
+        \draw[thick, teal] (8.5,3) -- (9,3.8);
+        \node at (8,1.8) {\small Ramificado};
+        % Reticulado
+        \draw[thick, teal] (0,0) -- (4,0);
+        \draw[thick, teal] (0,-1) -- (4,-1);
+        \draw[thick, teal] (1.5,0) -- (1.5,-1);
+        \draw[thick, teal] (3,0) -- (3,-1);
+        \node at (2,-1.5) {\small Reticulado (Red)};
+    \end{tikzpicture}
+    \caption{Representación bidimensional de las principales arquitecturas macromoleculares.}
+    \label{fig:arquitecturas}
+\end{figure}
+
+\section{Clasificación Térmico-Mecánica}
+
+Esta clasificación posee una importancia crucial en ingeniería de materiales y procesamiento:
+
+\subsection{Termoplásticos}
+Compuestos por cadenas lineales o ramificadas unidas únicamente por fuerzas intermoleculares secundarias débiles. Tienen la propiedad de fundirse de manera reversible al calentarse (permitiendo su flujo y moldeo) y solidificarse al enfriarse. Son solubles en solventes afines y reciclables por reprocesamiento térmico. Ejemplos: PET, PE, PP, PS.
+
+\subsection{Termoestables}
+Formados por resinas reactivas multifuncionales que experimentan una reacción química irreversible de reticulación (curado), formando una sola red tridimensional covalente gigante. No se funden bajo el calor, sino que se carbonizan o degradan térmicamente a altas temperaturas. Son insolubles en cualquier disolvente (aunque pueden hincharse) e infusibles. Ejemplos: Resinas epoxi, poliéster insaturado, fenol-formaldehído.
+
+\subsection{Elastómeros}
+Polímeros reticulados con muy baja densidad de uniones covalentes intermedias y cadenas altamente flexibles en reposo. Se caracterizan por su capacidad de sufrir enormes deformaciones elásticas reversibles (de hasta un 500\% o 1000\%) sin sufrir deformación plástica permanente. Ejemplo: caucho vulcanizado, siliconas.
+
+\begin{table}[h]
+    \centering
+    \caption{Matriz comparativa de comportamiento térmico-mecánico estructural.}
+    \label{tab:matriz_termico}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Propiedad} & \textbf{Termoplásticos} & \textbf{Termoestables} & \textbf{Elastómeros} \\
+        \midrule
+        Estructura química & Lineal o ramificada & Red altamente reticulada & Red con reticulación ligera \\
+        Fuerzas de cohesión & Secundarias (físicas) & Covalentes tridimensionales & Covalentes y fuerzas débiles \\
+        Fusibilidad & Fusible (reversible) & Infusible (se degrada) & Infusible \\
+        Solubilidad & Soluble en solventes afines & Completamente insoluble & Insoluble (se hincha) \\
+        Reciclabilidad física & Alta & Nula o muy difícil & Muy limitada (requiere desvulcanización) \\
+        \bottomrule
+    \end{tabular}
+\end{table}

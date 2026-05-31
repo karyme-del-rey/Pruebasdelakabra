@@ -1,0 +1,24 @@
+\chapter{Materiales Compuestos Reforzados con Polímeros}
+\label{cap:compuestos}
+
+Los materiales compuestos reforzados con matrices poliméricas representan el núcleo del diseño mecánico de alto rendimiento. Al combinar una matriz continua dúctil y liviana de resina termoplástica o termoestable con fibras discretas de alta resistencia e increíble rigidez (como vidrio, carbono o aramidas), se obtienen materiales anisotrópicos con excelentes relaciones de resistencia específica y módulo específico.
+
+\section{Micromecánica de Compuestos de Fibra Continua}
+
+Para estimar analíticamente las propiedades elásticas macroscópicas equivalentes de un material compuesto reforzado unidireccional con una fracción en volumen de fibras $V_f$ y de matriz $V_m$ ($V_f + V_m = 1.0$), se aplican dos modelos elásticos básicos:
+
+\subsection{Modelo de Voigt: Carga Longitudinal (Isodeformación)}
+Cuando el esfuerzo mecánico se aplica en la misma dirección longitudinal paralela al alineamiento de las fibras continuas, la deformación experimentada por las fibras y por la matriz es geométricamente idéntica ($\epsilon_c = \epsilon_f = \epsilon_m$). Esto da lugar a la conocida ley o regla de mezclas para el módulo elástico longitudinal ($E_L$):
+\begin{equation}
+    E_L = E_f V_f + E_m V_m
+    \label{eq:voigt}
+\end{equation}
+
+\subsection{Modelo de Reuss: Carga Transversal (Isoesfuerzo)}
+Si la fuerza tensora mecánica se ejerce en una dirección perpendicular o transversal al alineamiento de las fibras, se asume que las fases experimentan el mismo nivel de esfuerzo interno transversal ($\sigma_c = \sigma_f = \sigma_m$). El módulo elástico transversal resultante ($E_T$) se aproxima mediante la siguiente relación:
+\begin{equation}
+    E_T = \frac{E_f E_m}{E_f V_m + E_m V_f}
+    \label{eq:reuss}
+\end{equation}
+
+Dado que el módulo de las fibras de carbono o de vidrio es muy superior al de la matriz polimérica ($E_f \gg E_m$), el rendimiento elástico longitudinal es extraordinario en comparación con el desempeño transversal, obligando a los ingenieros a diseñar laminados multidireccionales cruzados (angulados) para soportar estados de esfuerzos multiaxiales complejos en estructuras reales.

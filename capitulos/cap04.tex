@@ -1,0 +1,56 @@
+\chapter{Métodos de Síntesis y Mecanismos de Polimerización}
+\label{cap:sintesis}
+
+Las macromoléculas se sintetizan a través de reacciones orgánicas en cadena o por pasos. Comprender los mecanismos cinéticos y químicos es la única vía para controlar de manera precisa el peso molecular y la distribución estructural de los polímeros industriales.
+
+\section{Polimerización por Pasos (Condensación)}
+
+En la polimerización por pasos, el crecimiento de la cadena ocurre de manera bifuncional o multifuncional por reacciones sucesivas entre grupos funcionales de cualquier especie química presente (monómeros, dímeros, oligómeros). Es común la eliminación de una molécula pequeña como subproducto (agua, cloruro de hidrógeno).
+
+\subsection{La Ecuación de Carothers}
+Wallace Carothers \cite{carothers1929} desarrolló la relación matemática que vincula la conversión de los grupos funcionales ($p$) con el grado de polimerización promedio en número ($\bar{X}_n$) para un sistema estequiométricamente balanceado:
+\begin{equation}
+    \bar{X}_n = \frac{1}{1 - p}
+    \label{eq:carothers}
+\end{equation}
+Esta ecuación demuestra una regla de oro de la síntesis de polímeros por pasos: se requieren conversiones de grupos funcionales extremadamente altas para obtener polímeros de alto peso molecular que posean propiedades mecánicas útiles. Por ejemplo, para lograr un humilde $\bar{X}_n = 100$, la conversión del grupo reactivo debe ser de un asombroso $p = 0.99$ (99.0\%). Cualquier desbalance estequiométrico o presencia de impurezas monofuncionales detendrá el crecimiento molecular prematuramente.
+
+\section{Polimerización en Cadena (Adición)}
+
+A diferencia del crecimiento por pasos, la polimerización en cadena requiere de un centro activo iniciado (radical libre, catión, anión o complejo organometálico) que adiciona monómeros insaturados de forma extremadamente rápida a su extremo reactivo propagante.
+
+\subsection{Cinética de la Polimerización Radicalaria}
+El mecanismo clásico de polimerización radicalaria consta de tres etapas fundamentales diferenciadas:
+
+\begin{description}
+    \item[Iniciación:] Descomposición del iniciador ($I$) para generar radicales libres reactivos ($R^\bullet$), seguido por el ataque al monómero ($M$):
+        \begin{equation}
+            I \xrightarrow{k_d} 2 R^\bullet \quad \text{y} \quad R^\bullet + M \xrightarrow{k_i} M_1^\bullet
+        \end{equation}
+    \item[Propagación:] Adición sucesiva de monómeros al radical de la cadena en crecimiento:
+        \begin{equation}
+            M_n^\bullet + M \xrightarrow{k_p} M_{n+1}^\bullet
+        \end{equation}
+    \item[Terminación:] Extinción de la actividad radicalaria por combinación o desproporción:
+        \begin{equation}
+            M_x^\bullet + M_y^\bullet \xrightarrow{k_t} \text{Polímero muerto}
+        \end{equation}
+\end{description}
+
+Aplicando la hipótesis del estado pseudoestacionario para los radicales de la cadena activa (donde la velocidad de iniciación es igual a la velocidad de terminación), la velocidad global de polimerización ($R_p$) se deduce de la siguiente manera:
+\begin{equation}
+    R_p = k_p [M] \left( \frac{f k_d [I]}{k_t} \right)^{1/2}
+    \label{eq:velocidad_rp}
+\end{equation}
+donde $f$ es la eficiencia del iniciador radicalario. Obsérvese que la velocidad de propagación es de orden 1.0 con respecto a la concentración del monómero $[M]$ y de orden 0.5 con respecto a la concentración del iniciador $[I]$.
+
+\section{Sistemas de Procesamiento Industrial}
+
+Existen cuatro métodos principales para realizar la polimerización a nivel de planta química:
+
+\begin{enumerate}
+    \item \textbf{En Masa:} Contiene únicamente monómero e iniciador. Ofrece una excelente pureza del polímero pero presenta un serio problema de remoción de calor debido al incremento drástico de la viscosidad (efecto gel o efecto Trommsdorff).
+    \item \textbf{En Disolución:} El monómero y el iniciador se disuelven en un disolvente orgánico inerte. El solvente actúa como disipador térmico, pero reduce la velocidad de reacción y requiere costosos procesos de purificación posteriores.
+    \item \textbf{En Suspensión:} El monómero se dispersa como gotas finas en agua bajo agitación mecánica intensa y agentes estabilizadores. Se obtienen esferas de polímero fáciles de filtrar.
+    \item \textbf{En Emulsión:} Emplea agua, monómero insoluble, iniciador soluble en agua y surfactantes micelares. Permite velocidades de reacción rápidas obteniendo pesos moleculares muy altos simultáneamente.
+\end{enumerate}

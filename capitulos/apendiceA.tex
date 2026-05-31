@@ -1,0 +1,38 @@
+\chapter{Modelos Matemáticos y Deducciones Detalladas}
+\label{ap:apendiceA}
+
+En este apéndice se presenta el desarrollo matemático riguroso de la teoría termodinámica de soluciones poliméricas de Flory-Huggins introducida en el Capítulo \ref{cap:fisica}.
+
+\section{Deducción de la Entropía de Mezcla Combinatoria ($\Delta S_m$)}
+
+Consideremos una red cristalina tridimensional idealizada compuesta por $N_0$ celdas idénticas donde cada celda puede ser ocupada por una molécula de solvente o por un segmento individual de una cadena polimérica. Sea:
+\begin{itemize}
+    \item $N_1$ el número de moléculas de solvente, cada una ocupando exactamente una celda de red ($r_1 = 1$).
+    \item $N_2$ el número de moléculas de polímero, cada una compuesta por $r$ segmentos enlazados contiguos, ocupando $r$ celdas consecutivas de la red.
+\end{itemize}
+
+El número total de celdas de la red cristalina es:
+\begin{equation}
+    N_0 = N_1 + r N_2
+    \label{eq:n0_red}
+\end{equation}
+
+Las fracciones en volumen de solvente y polímero se definen respectivamente como:
+\begin{equation}
+    \phi_1 = \frac{N_1}{N_0} \quad \text{y} \quad \phi_2 = \frac{r N_2}{N_0}
+    \label{eq:fracciones_vol}
+\end{equation}
+
+El número total de formas geométricas posibles ($\Omega$) de colocar las $N_2$ macromoléculas lineales flexibles y las $N_1$ moléculas pequeñas de solvente en la red cristalina se aproxima utilizando la hipótesis del campo medio molecular. El cambio en la entropía combinatoria de mezcla ($\Delta S_m$) se calcula a través de la relación de Boltzmann:
+\begin{equation}
+    \Delta S_m = k_B \ln \Omega
+    \label{eq:boltzmann}
+\end{equation}
+
+Deduciendo y aplicando la aproximación de Stirling para factoriales extensos ($\ln N! \approx N \ln N - N$), el cambio en la entropía combinatoria de mezcla por mol se expresa de la siguiente manera:
+\begin{equation}
+    \Delta S_m = - R \left[ n_1 \ln \phi_1 + n_2 \ln \phi_2 \right]
+    \label{eq:entropia_final}
+\end{equation}
+
+Dado que para macromoléculas de alto peso molecular $r$ es un número muy grande ($r \approx 10^3 - 10^5$), el número de moles del polímero $n_2$ es sumamente pequeño comparado con el del solvente $n_1$. Esto provoca que el término $\ln \phi_2$ esté multiplicado por un coeficiente casi insignificante, haciendo que el valor de $\Delta S_m$ sea de un orden de magnitud sumamente bajo en comparación con la mezcla de dos líquidos de bajo peso molecular tradicionales.

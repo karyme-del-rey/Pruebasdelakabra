@@ -1,0 +1,88 @@
+%% =========================================================================
+% Colores personalizados (debe cargarse antes de tikz y titlesec)
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+%% preamble.tex - Configuración Estética y Paquetes Avanzados
+%% =========================================================================
+
+% 1. Codificación e Idioma
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel} % es-tabla fuerza "Tabla" en vez de "Cuadro"
+
+% 2. Geometría de Página Académica Elegante
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={160mm,240mm},
+    left=30mm,
+    top=25mm,
+    headheight=15pt
+}
+
+% 3. Matemáticas Rigurosas y Avanzadas
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{bm} % Negritas matemáticas para vectores/tensores
+
+% 4. Química Estructural Vectorial
+\usepackage{chemfig}
+\usepackage[version=4]{mhchem}
+\setchemfig{atom sep=1.8em, double bond sep=2.5pt, bond offset=1.5pt}
+
+% 5. Figuras y Gráficos Nativos
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% 6. Estilos de Tablas de Alto Impacto Editorial
+\usepackage{booktabs}        % Elimina las líneas divisorias verticales feas
+\usepackage{array}           % Alineaciones avanzadas de celdas
+\usepackage{siunitx}        % Alineación numérica por punto decimal y notación científica
+\sisetup{output-decimal-marker = {.}}
+\usepackage{threeparttable} % Notas al pie en tablas
+\usepackage{multirow}       % Combinación de filas
+
+% 7. Cabeceras y Pies de Página Premium
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 8. Hipervínculos e Integración Digital
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=teal,
+    citecolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Tratado de Ciencia e Ingenieria de Polimeros},
+    pdfauthor={Placeholder Autor},
+    pdfpagemode=FullScreen,
+}
+
+% 9. Ajustes Tipográficos de Precisión (Microtype)
+% expansion=false evita el error con fuentes no escalables en pdflatex
+\usepackage[protrusion=true,expansion=false]{microtype}
+
+% Configuración del formato de títulos
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\color{teal}}
+  {\chaptercomputermodern\ {\fontsize{60}{60}\selectfont\thechapter}}
+  {20pt}
+  {\Huge}
+\newcommand{\chaptercomputermodern}{\scshape\Large\chaptername}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{teal}}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{black!80}}{\thesubsection}{1em}{}

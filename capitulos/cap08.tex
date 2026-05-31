@@ -1,0 +1,31 @@
+\chapter{Procesamiento Industrial de Polímeros}
+\label{cap:procesamiento}
+
+El procesamiento de polímeros abarca las técnicas de transformación ingenieril para convertir resinas plásticas brutas en piezas y perfiles funcionales comerciales. Comprender la reología de los fundidos (viscosidad no newtoniana) y el transporte de calor y momento es crítico para diseñar máquinas de extrusión e inyección eficientes.
+
+\section{Comportamiento Reológico de Fundidos Poliméricos}
+
+A temperaturas superiores a $T_g$ y $T_m$, los fundidos de polímeros fluyen bajo cargas. Estos fluidos son no newtonianos y muestran pseudoplasticidad (adelgazamiento por cizallamiento o \textit{shear-thinning}), donde su viscosidad aparente decae de forma drástica al aumentar la velocidad de deformación ($\dot{\gamma}$).
+
+\subsection{Modelo de Ley de Potencia (Ostwald-de Waele)}
+La viscosidad de cizalla del fundido en la ventana de procesado industrial se modela de manera cuantitativa utilizando el modelo de ley de potencia:
+\begin{equation}
+    \tau = m \dot{\gamma}^n \quad \text{y} \quad \eta_a = m \dot{\gamma}^{n-1}
+    \label{eq:ley_potencia}
+\end{equation}
+donde:
+\begin{itemize}
+    \item $\tau$ es el esfuerzo cortante de cizalla.
+    \item $\eta_a$ representa la viscosidad aparente del fundido polimérico.
+    \item $m$ es el índice de consistencia del fluido.
+    \item $n$ es el índice de comportamiento del flujo (adimensional). Dado que los polímeros fundidos son altamente pseudoplásticos, sus índices de comportamiento son menores a la unidad ($n < 1.0$). Típicamente $n$ oscila entre 0.2 y 0.5.
+\end{itemize}
+
+El comportamiento pseudoplástico es extremadamente favorable para el procesamiento industrial, puesto que bajo presiones de inyección muy altas en los moldes (donde la velocidad de cizalla es alta), la viscosidad disminuye enormemente, reduciendo la fuerza y energía del motor del inyector requeridas para moldear geometrías intrincadas.
+
+\section{Procesos Industriales de Transformación}
+
+\begin{description}
+    \item[Extrusión:] Proceso continuo donde el material fundido es forzado a pasar bajo presión a través de un dado o matriz que posee la forma de sección transversal del perfil deseado. Se utiliza para fabricar tuberías, láminas, películas sopladas e hilos de filamentos.
+    \item[Moldeo por Inyección:] Proceso discontinuo y cíclico de alta precisión espacial. El polímero fundido en la unidad de inyección es inyectado a altísima presión dentro de la cavidad fría de un molde metálico de acero templado, donde solidifica de manera geométrica exacta. Es idóneo para la producción masiva de carcasas, tapones y componentes automotrices complejos.
+\end{description}

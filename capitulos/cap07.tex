@@ -1,0 +1,38 @@
+\chapter{Propiedades Térmicas y Transiciones de Fase}
+\label{cap:termicas}
+
+Los polímeros experimentan transiciones de fase críticas que delimitan sus rangos de temperatura útiles en aplicaciones ingenieriles y de diseño. A diferencia de compuestos simples moleculares, la presencia de cadenas de gran longitud da lugar a transiciones dinámicas como la transición vítrea ($T_g$) y a estructuras cristalinas semicristalinas complejas.
+
+\section{Morfología Semicristalina}
+
+Los polímeros son incapaces de cristalizar de forma completa debido a la gran masa de sus moléculas y a sus enredos físicos inevitables. Por ello, forman estructuras semicristalinas compuestas por fases amorfas desordenadas dispersas en regiones cristalinas altamente ordenadas en forma de lamelas (cadenas plegadas en paralelo). La cristalización de los fundidos se organiza en microestructuras esféricas complejas denominadas esferulitas.
+
+\subsection{Cinética de Cristalización: La Ecuación de Avrami}
+La velocidad y el mecanismo físico de cristalización isotérmica a partir del fundido se modela matemáticamente a través de la ecuación general de Avrami:
+\begin{equation}
+    1 - X_t = \exp(-k t^n)
+    \label{eq:avrami}
+\end{equation}
+donde:
+\begin{itemize}
+    \item $X_t$ es la fracción volumétrica cristalizada en un tiempo $t$.
+    \item $k$ es la constante de velocidad de cristalización específica que engloba nucleación y crecimiento lineal.
+    \item $n$ representa el exponente de Avrami, que describe la dimensionalidad geométrica del crecimiento cristalino (comúnmente oscila entre 1.0 y 4.0). Un valor de $n \approx 3$ define un crecimiento tridimensional esferulítico a partir de nucleación instantánea.
+\end{itemize}
+
+\section{Transición Vítrea ($T_g$) vs. Fusión Cristalina ($T_m$)}
+
+Estas dos transiciones definen el comportamiento físico de los plásticos:
+
+\begin{description}
+    \item[Transición Vítrea ($T_g$):] Transición de segundo orden termodinámica característica de la fase amorfa del polímero. Representa la transición de un estado sólido vítreo duro y frágil a un estado gomoso o elástico altamente flexible debido a la activación del movimiento cooperativo segmental de grandes secciones de la cadena principal de carbonos.
+    \item[Temperatura de Fusión ($T_m$):] Transición termodinámica de primer orden clásica caracterizada por la fusión completa de las regiones cristalinas del polímero semicristalino, con la consiguiente discontinuidad en el volumen específico y absorción neta de entalpía.
+\end{description}
+
+\subsection{Predicción de $T_g$ en Mezclas: La Ecuación de Fox}
+La temperatura de transición vítrea de copolímeros o mezclas poliméricas homogéneas miscibles se calcula empleando la ecuación empírica de Fox:
+\begin{equation}
+    \frac{1}{T_g} = \frac{w_1}{T_{g,1}} + \frac{w_2}{T_{g,2}}
+    \label{eq:fox}
+\end{equation}
+donde $w_1$ y $w_2$ son las fracciones en peso de los componentes individuales de la mezcla, y $T_{g,i}$ son sus respectivas temperaturas de transición vítrea absolutas expresadas en Kelvin.

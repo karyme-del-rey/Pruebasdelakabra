@@ -1,0 +1,30 @@
+\chapter{Elastómeros y Elasticidad del Caucho}
+\label{cap:elastomeros}
+
+Los elastómeros son materiales con propiedades mecánicas extraordinarias: exhiben una elasticidad de largo alcance capaz de soportar deformaciones extensas reversibles sin daño permanente. Esta capacidad excepcional tiene su origen directo en la termodinámica estadística entrópica de redes moleculares de cadenas flexibles con baja temperatura de transición vítrea ($T_g$) y uniones ligeras de reticulación (vulcanización).
+
+\section{Fundamento Termodinámico de la Elasticidad}
+
+Cuando estiramos un resorte metálico ordinario, la fuerza elástica tensora restauradora se origina por un incremento en la energía interna del cristal debido al desplazamiento de sus enlaces interatómicos. En un caucho, la situación es opuesta. Al estirar un caucho vulcanizado, la fuerza de restauración es de naturaleza entrópica.
+
+La fuerza de restauración de tracción elástica ($f$) se expresa mediante la relación termodinámica general:
+\begin{equation}
+    f = \left( \frac{\partial U}{\partial l} \right)_{T, V} - T \left( \frac{\partial S}{\partial l} \right)_{T, V}
+    \label{eq:termo_caucho}
+\end{equation}
+Para un caucho ideal, las interacciones moleculares son insensibles a la deformación, por lo que el cambio de energía interna con la extensión es nulo ($\left( \frac{\partial U}{\partial l} \right)_{T, V} = 0$). Así, la fuerza es puramente entrópica:
+\begin{equation}
+    f = - T \left( \frac{\partial S}{\partial l} \right)_{T, V}
+    \label{eq:fuerza_entropica}
+\end{equation}
+
+Dado que las cadenas en reposo se encuentran en su estado de máximo desorden confórmero (ovillo aleatorio de alta entropía), el estiramiento mecánico las obliga a alinearse y ordenarse de manera forzada en una dirección espacial específica, lo cual reduce drásticamente la entropía del sistema ($\Delta S < 0$). Al liberar el esfuerzo externo, el sistema regresa espontáneamente a su estado de desorden entrópico original. Esto explica la paradoja térmica del caucho: al estirarse mecánicamente de forma súbita, libera energía térmica y se calienta notablemente al tacto.
+
+\section{Ecuación de Estado del Caucho Elástico}
+
+Utilizando la teoría estadística de la deformación afín de una red elástica tridimensional idealizada, se deduce que la fuerza tensora nominal por unidad de área transversal inicial ($\sigma_0$) se relaciona con la razón de deformación del estiramiento ($\lambda = l / l_0$) mediante:
+\begin{equation}
+    \sigma_0 = N k_B T \left( \lambda - \frac{1}{\lambda^2} \right) = G \left( \lambda - \frac{1}{\lambda^2} \right)
+    \label{eq:estado_caucho}
+\end{equation}
+donde $N$ es el número de cadenas de red elástica por unidad de volumen, y $G$ es el módulo de corte elástico definido estadísticamente como $G = N k_B T = \frac{\rho R T}{M_c}$, siendo $M_c$ el peso molecular promedio entre puntos de reticulación o uniones covalentes de vulcanización.

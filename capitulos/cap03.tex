@@ -1,0 +1,53 @@
+\chapter{Estructura Molecular y Conformación de Cadenas}
+\label{cap:estructura}
+
+La microestructura de un polímero dicta de forma directa sus propiedades de estado sólido macroscópico. Para analizarla, debemos separar claramente dos conceptos que suelen confundirse en química: configuración y conformación. La configuración describe la disposición espacial permanente determinada por enlaces covalentes que solo pueden cambiarse mediante la ruptura física de dichos enlaces. La conformación, por su parte, se refiere a la disposición en el espacio de los átomos de la cadena que puede variarse de manera continua y dinámica por rotación simple alrededor de enlaces covalentes simples sin romper ningún enlace químico.
+
+\section{Estereorregularidad y Tacticidad}
+
+El concepto de tacticidad describe el orden espacial regular de los sustituyentes colgantes a lo largo de un átomo de carbono quiral asimétrico en la cadena principal del polímero:
+
+\begin{description}
+    \item[Polímeros Isotácticos:] Todos los grupos sustituyentes se encuentran orientados en el mismo lado del plano de la cadena principal de carbonos extendida. Son altamente cristalinos debido a la simetría de empaquetamiento molecular.
+    \item[Polímeros Sindiotácticos:] Los sustituyentes se alternan regularmente de un lado a otro del plano de la cadena principal. También son propensos a la cristalización.
+    \item[Polímeros Atácticos:] La disposición de los sustituyentes es totalmente aleatoria y desordenada. Son incapaces de cristalizar y forman vidrios amorfos.
+\end{description}
+
+\begin{figure}[h]
+    \centering
+    % Dibujo chemfig para polipropileno isotáctico
+    \chemfig{H_3C-C(-[2]H)(-[6]CH_3)-C(-[2]H)(-[6]H)-C(-[2]H)(-[6]CH_3)-C(-[2]H)(-[6]H)-C(-[2]H)(-[6]CH_3)}
+    \caption{Fragmento de cadena de polipropileno isotáctico.}
+    \label{fig:tacticidad_propileno}
+\end{figure}
+
+\section{Modelos Estadísticos de Conformación de Cadenas}
+
+Para modelar la forma dinámica y el tamaño promedio tridimensional de una macromolécula flexible aislada en disolución o en fundido amorfo (ovillo aleatorio o \textit{random coil}), se recurre a la estadística física.
+
+\subsection{Modelo de Cadena Libremente Unida}
+Es el modelo más sencillo. Considera que la cadena polimérica consta de $n$ enlaces químicos de longitud constante $l$, libres de cualquier restricción en sus ángulos de enlace y ángulos de torsión. Matemáticamente se modela como una caminata aleatoria. La distancia extremo a extremo vectorial promedio es cero ($\langle \vec{r} \rangle = 0$), pero la distancia cuadrática media extremo a extremo no es nula y se define como:
+\begin{equation}
+    \langle r^2 \rangle_0 = n l^2
+    \label{eq:enlace_libre}
+\end{equation}
+
+\subsection{Modelo de Rotación Libre}
+Introduce la restricción real del ángulo de enlace químico ($\theta$) entre átomos de carbono contiguos (para carbonos con hibridación $sp^3$, el ángulo es de $109.5^\circ$). Aunque el ángulo $\theta$ es fijo, la rotación alrededor del eje del enlace sigue siendo completamente libre y sin impedimentos estéricos. La distancia cuadrática media se expande geométricamente debido a esta restricción:
+\begin{equation}
+    \langle r^2 \rangle_{\text{free}} = n l^2 \left( \frac{1 - \cos\theta}{1 + \cos\theta} \right)
+    \label{eq:rotacion_libre}
+\end{equation}
+
+\subsection{Relación de Característica de Flory ($C_\infty$)}
+Las cadenas reales presentan rigidez debido al volumen excluido intermolecular y las barreras energéticas de rotación de los confórmeros (trans y gauche). Paul Flory introdujo la relación característica de Flory ($C_\infty$) para cuantificar la rigidez relativa de una cadena real comparada con el modelo ideal libremente unido:
+\begin{equation}
+    C_\infty = \lim_{n \to \infty} \frac{\langle r^2 \rangle_0}{n l^2}
+    \label{eq:flory_ratio}
+\end{equation}
+Valores típicos de $C_\infty$ para polímeros comerciales:
+\begin{itemize}
+    \item Polietileno (PE): $C_\infty \approx 6.7$ (cadena moderadamente flexible)
+    \item Poliestireno (PS): $C_\infty \approx 10.0$ (cadena más rígida debido a los anillos de benceno colgantes)
+    \item Policarbonato (PC): $C_\infty \approx 8.5$
+\end{itemize}

@@ -1,0 +1,43 @@
+\chapter{Propiedades Mecánicas y Comportamiento Viscoelástico}
+\label{cap:mecanicas}
+
+Los polímeros poseen un comportamiento mecánico único denominado viscoelasticidad. A diferencia de los sólidos puramente elásticos (que obedecen la ley de Hooke) y de los líquidos puramente viscosos (que obedecen la ley de Newton para fluidos), los polímeros exhiben ambas propiedades simultáneamente debido a la flexibilidad y enredo físico de sus largas cadenas bajo esfuerzos deformantes mecánicos.
+
+\section{Modelos Viscoelásticos Clásicos}
+
+Para aproximar cuantitativamente el comportamiento viscoelástico lineal, se recurre a modelos analógicos mecánicos compuestos por combinaciones de resortes elásticos ideales de constante $E$ y amortiguadores viscosos ideales de viscosidad $\eta$:
+
+\subsection{Modelo de Maxwell (Comportamiento en Relajación)}
+Consiste en un resorte y un amortiguador acoplados en serie. Su ecuación constitutiva diferencial general se define como:
+\begin{equation}
+    \frac{d\epsilon}{dt} = \frac{1}{E} \frac{d\sigma}{dt} + \frac{\sigma}{\eta}
+    \label{eq:maxwell}
+\end{equation}
+Si sometemos el sistema a una deformación constante e instantánea ($\epsilon = \epsilon_0$ y $\frac{d\epsilon}{dt} = 0$), el esfuerzo $\sigma(t)$ se relaja de manera exponencial a través del tiempo siguiendo la siguiente expresión matemática:
+\begin{equation}
+    \sigma(t) = E \epsilon_0 e^{-t/\tau} \quad \text{donde} \quad \tau = \frac{\eta}{E}
+    \label{eq:relajacion_maxwell}
+\end{equation}
+donde $\tau$ representa el tiempo de relajación característico del material polimérico.
+
+\subsection{Modelo de Kelvin-Voigt (Comportamiento en Fluencia/Creep)}
+Compuesto por un resorte y un amortiguador colocados en paralelo. Su ecuación constitutiva se define mediante la siguiente relación:
+\begin{equation}
+    \sigma = E\epsilon + \eta \frac{d\epsilon}{dt}
+    \label{eq:kelvin_voigt}
+\end{equation}
+Si se aplica un esfuerzo constante e instantáneo $\sigma_0$ (ensayo de fluencia), el material sufre una deformación progresiva retardada que se estabiliza asintóticamente hacia el módulo elástico del resorte.
+
+\section{Análisis Mecánico Dinámico (DMA)}
+
+El comportamiento bajo esfuerzos oscilatorios dinámicos alternantes revela la respuesta elástica y viscosa en función de la temperatura y de la frecuencia. En el DMA se definen las siguientes variables:
+\begin{description}
+    \item[Módulo de Almacenamiento ($E'$):] Medida de la energía mecánica almacenada elásticamente de forma reversible por el polímero.
+    \item[Módulo de Pérdida ($E''$):] Medida de la energía disipada irreversiblemente en forma de calor debido al flujo viscoso interno de las cadenas.
+    \item[Factor de Pérdida ($\tan \delta$):] Razón de amortiguamiento, indicando la amortiguación del material frente a vibraciones mecánicas:
+        \begin{equation}
+            \tan \delta = \frac{E''}{E'}
+            \label{eq:tan_delta}
+        \end{equation}
+\end{description}
+Un pico muy pronunciado en la curva de $\tan \delta$ en función de la temperatura define experimentalmente la temperatura de transición vítrea ($T_g$) de la muestra.

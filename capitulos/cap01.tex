@@ -1,0 +1,90 @@
+\chapter{Introducción a la Ciencia de los Polímeros}
+\label{cap:intro}
+
+La ciencia de los polímeros es una de las disciplinas más transversales y de mayor impacto socioeconómico del último siglo. El concepto macromolecular, aunque hoy en día es universalmente aceptado, requirió una intensa lucha intelectual liderada por Hermann Staudinger en la década de 1920 \cite{staudinger1920}, quien propuso frente a la comunidad científica que los materiales elásticos y viscosos como el caucho natural o la seda no eran simples agregados coloidales de moléculas pequeñas, sino cadenas gigantes unidas covalentemente de tamaño molecular extraordinario.
+
+\section{Definiciones Fundamentales}
+
+Para comprender la química y física de las macromoléculas, es necesario precisar sus términos básicos:
+\begin{description}
+    \item[Monómero:] Molécula de bajo peso molecular y funcionalidad mínima de dos, capaz de reaccionar covalentemente para formar una estructura de cadena repetitiva.
+    \item[Polímero:] Sustancia macromolecular compuesta por la repetición química de una o más unidades constitucionales repetitivas unidas covalentemente.
+    \item[Grado de Polimerización ($DP$):] El número de unidades monoméricas individuales presentes en una sola cadena polimérica promedio.
+\end{description}
+
+La distinción entre monómero inicial y unidad constitucional repetitiva (UCR) es sutil pero crucial. Por ejemplo, en la síntesis del Nailon 6,6, los monómeros iniciales (ácido adípico y hexametilendiamina) pierden una molécula de agua para formar la UCR amida en la cadena principal.
+
+\section{Pesos Moleculares Estadísticos y Polidispersidad}
+
+A diferencia de las moléculas pequeñas puras (como el agua o el benceno), que poseen un peso molecular exacto y único (monodispersión), los polímeros sintéticos son polidispersos. Esto significa que una muestra comercial está compuesta por una mezcla estadística de cadenas con longitudes y pesos moleculares diversos. Por ello, es imperativo recurrir a promedios estadísticos para describir las dimensiones de las cadenas poliméricas.
+
+\subsection{Peso Molecular Promedio en Número ($M_n$)}
+Se basa en la fracción molecular o número de moles de cada especie presente en la muestra. Se define como:
+\begin{equation}
+    M_n = \frac{\sum_i N_i M_i}{\sum_i N_i} = \sum_i X_i M_i
+    \label{eq:mn}
+\end{equation}
+donde $N_i$ es el número de moles de la especie con peso molecular $M_i$, y $X_i$ es su fracción molar correspondiente. Este promedio es altamente sensible a la presencia de especies de bajo peso molecular (oligómeros e impurezas).
+
+\subsection{Peso Molecular Promedio en Peso ($M_w$)}
+Se fundamenta en la fracción en peso de cada especie macromolecular, y se expresa matemáticamente mediante:
+\begin{equation}
+    M_w = \frac{\sum_i N_i M_i^2}{\sum_i N_i M_i} = \sum_i w_i M_i
+    \label{eq:mw}
+\end{equation}
+donde $w_i$ representa la fracción en peso de la especie de masa molecular $M_i$. Este promedio está fuertemente influenciado por las cadenas gigantes de gran peso molecular, y es clave en las propiedades mecánicas y de flujo.
+
+\subsection{Índice de Polidispersidad (\text{\DJ})}
+La amplitud de la distribución de pesos moleculares se mide a través del índice de polidispersidad (\text{\DJ}), definido por Flory \cite{flory1953principles} como la razón entre el promedio en peso y el promedio en número:
+\begin{equation}
+    \text{\DJ} = \frac{M_w}{M_n}
+    \label{eq:pdi}
+\end{equation}
+Dado que geométricamente $M_w \ge M_n$, el valor de \text{\DJ} siempre será mayor o igual a 1.0. Un valor de \text{\DJ} = 1.0 indica un polímero estrictamente monodisperso (común solo en proteínas naturales y polímeros sintetizados por técnicas aniónicas vivientes extremadamente controladas). Las polimerizaciones industriales típicas producen polidispersidades que oscilan entre 1.5 y más de 20.0.
+
+\begin{table}[h]
+    \centering
+    \caption{Comparativa dimensional y reológica según el tamaño molecular.}
+    \label{tab:comparativa_pesos}
+    \begin{threeparttable}
+        \begin{tabular}{lccc}
+            \toprule
+            \textbf{Categoría} & \textbf{Rango de $M$ [\text{g/mol}]} & \textbf{Comportamiento Físico} & \textbf{Solubilidad y Flujo} \\
+            \midrule
+            Monómeros simples & $18 - 200$ & Gaseoso o Líquido volátil & Excelente solubilidad, muy fluido \\
+            Oligómeros & $200 - 10,000$ & Céreo o Aceitoso viscoso & Soluble, flujo newtoniano fácil \\
+            Polímeros comerciales & $10,000 - 500,000$ & Sólido elástico o tenaz & Difícil disolución, flujo no newtoniano \\
+            Ultra-alto peso molecular & $> 1,000,000$ & Sólido de alta tenacidad & Casi insoluble, no fluye en fundido \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}
+            \small
+            \item Nota: Los valores varían en función de la rigidez intrínseca de la cadena principal.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\section{Estructura Esquemática de la Formación de Cadenas}
+
+La transición conceptual de monómeros discretos a cadenas extendidas lineales se puede visualizar en el siguiente esquema general de polimerización molecular:
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance=1.5cm, every node/.style={circle, draw=teal, fill=teal!10, minimum size=8mm}]
+        % Monómeros individuales dispersos
+        \node (m1) [label=below:Monómeros] {M};
+        \node (m2) [right of=m1] {M};
+        \node (m3) [right of=m2] {M};
+        \node (arrow) [right of=m3, draw=none, fill=none] {$\xrightarrow{\text{Polimerización}}$};
+        % Cadena polimérica
+        \node (p1) [right of=arrow, label=below:Cadena lineal] {M};
+        \node (p2) [right of=p1] {M};
+        \node (p3) [right of=p2] {M};
+        \node (p4) [right of=p3] {M};
+        \draw[thick, -] (p1) -- (p2);
+        \draw[thick, -] (p2) -- (p3);
+        \draw[thick, -] (p3) -- (p4);
+    \end{tikzpicture}
+    \caption{Representación esquemática de la polimerización molecular.}
+    \label{fig:esquema_polimeros}
+\end{figure}
