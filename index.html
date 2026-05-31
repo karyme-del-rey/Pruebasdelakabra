@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratado de Ciencia e Ingeniería de Polímeros - Resumen Interactivo</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portal académico e interactivo del Tratado de Ciencia e Ingeniería de Polímeros. Incluye simuladores reológicos, calculadoras termodinámicas y un explorador detallado de 16 capítulos científicos.">
+    <meta name="keywords" content="polímeros, ciencia de polímeros, macromoléculas, ecuación de carothers, ecuación de fox, viscoelasticidad, maxwell, kelvin-voigt, termoplásticos, termoestables">
+    <meta name="author" content="Karyme ZR">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Network Animation Background Canvas -->
+    <canvas id="networkCanvas"></canvas>
+
+    <!-- Header & Navigation -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fa-solid fa-atom logo-icon"></i>
+                <span class="logo-text">Macromoléculas<span>.io</span></span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="#capitulos" class="nav-link"><i class="fa-solid fa-book-open"></i> Capítulos</a>
+                <a href="#laboratorio" class="nav-link"><i class="fa-solid fa-flask"></i> Laboratorio</a>
+                <a href="#galeria" class="nav-link"><i class="fa-solid fa-shapes"></i> Galería</a>
+            </nav>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-btn" aria-label="Cambiar tema">
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                    <i class="fa-solid fa-moon icon-moon"></i>
+                </button>
+                <a href="main.pdf" download="Tratado_de_Polimeros_Completo.pdf" class="btn btn-primary download-btn" id="downloadPdfBtn">
+                    <i class="fa-solid fa-file-pdf"></i> Descargar PDF
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="badge"><i class="fa-solid fa-award"></i> Tratado Académico Avanzado</div>
+            <h1 class="hero-title">Ciencia e Ingeniería de <span class="gradient-text">Polímeros</span></h1>
+            <p class="hero-subtitle">
+                Explora los fundamentos moleculares, la síntesis química, el comportamiento termodinámico y las aplicaciones industriales de las macromoléculas a través de simuladores visuales e interactivos.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#capitulos" class="btn btn-primary btn-lg"><i class="fa-solid fa-book-open-reader"></i> Explorar Libro</a>
+                <a href="#laboratorio" class="btn btn-secondary btn-lg"><i class="fa-solid fa-flask-vial"></i> Ir al Laboratorio</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-card">
+                <span class="stat-number">16</span>
+                <span class="stat-label">Capítulos Técnicos</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">2</span>
+                <span class="stat-label">Apéndices de Cálculo</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Simuladores Web</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Chapters Section -->
+    <section id="capitulos" class="section-container">
+        <div class="section-header">
+            <div class="section-subtitle">Guía de Referencia Rápida</div>
+            <h2 class="section-title">Contenido del Tratado</h2>
+            <p class="section-desc">Utiliza el buscador instantáneo para filtrar entre los 16 capítulos del libro y visualizar sus conceptos teóricos, fórmulas clave e ilustraciones interactivas.</p>
+            
+            <!-- Search & Filters -->
+            <div class="search-bar-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="chapterSearch" placeholder="Buscar por capítulo, tema (ej. viscoelástico, Carothers, Fox, extrusión)..." aria-label="Buscar capítulos">
+                <button id="clearSearch" class="clear-search-btn" style="display:none;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+
+        <!-- Chapters Grid -->
+        <div class="chapters-grid" id="chaptersGrid">
+            <!-- Dynamically populated via JS -->
+        </div>
+    </section>
+
+    <!-- Lab Virtual Section (Simulators) -->
+    <section id="laboratorio" class="section-container bg-dark-tint">
+        <div class="section-header">
+            <div class="section-subtitle">Laboratorio Termomecánico Virtual</div>
+            <h2 class="section-title">Modeladores Interactivos</h2>
+            <p class="section-desc">Simula el comportamiento de materiales poliméricos en tiempo real aplicando modelos constitutivos de viscoelasticidad lineal, cinética de polimerización y termodinámica estadística.</p>
+        </div>
+
+        <div class="lab-tabs">
+            <button class="lab-tab-btn active" data-target="sim-viscoelasticidad"><i class="fa-solid fa-wave-square"></i> Viscoelasticidad</button>
+            <button class="lab-tab-btn" data-target="sim-carothers"><i class="fa-solid fa-chart-line"></i> Ec. de Carothers</button>
+            <button class="lab-tab-btn" data-target="sim-fox"><i class="fa-solid fa-temperature-high"></i> Ec. de Fox</button>
+        </div>
+
+        <div class="lab-content-container">
+            <!-- Simulator 1: Viscoelasticity -->
+            <div class="lab-panel active" id="sim-viscoelasticidad">
+                <div class="simulator-grid">
+                    <div class="sim-controls">
+                        <h3>Viscoelasticidad Lineal</h3>
+                        <p class="sim-instruction">Ajusta los parámetros reológicos y selecciona entre el modelo de Maxwell (líquido viscoelástico, amortiguador y resorte en serie) y el de Kelvin-Voigt (sólido viscoelástico en paralelo).</p>
+                        
+                        <div class="control-group">
+                            <label>Modelo Físico:</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="rheoModel" value="maxwell" checked>
+                                    <span>Maxwell (Relajación)</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="rheoModel" value="kelvin">
+                                    <span>Kelvin-Voigt (Fluencia / Creep)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="slider-header">
+                                <span>Módulo Elástico (E):</span>
+                                <span class="slider-value" id="valE">10 GPa</span>
+                            </div>
+                            <input type="range" id="paramE" min="1" max="50" value="10">
+                        </div>
+
+                        <div class="control-group">
+                            <div class="slider-header">
+                                <span>Viscosidad (&eta;):</span>
+                                <span class="slider-value" id="valEta">5 GPa·s</span>
+                            </div>
+                            <input type="range" id="paramEta" min="1" max="100" value="30">
+                        </div>
+
+                        <div class="control-group">
+                            <div class="slider-header">
+                                <span>Esfuerzo/Deformación Inicial (&sigma;₀ / &epsilon;₀):</span>
+                                <span class="slider-value" id="valInit">1.0</span>
+                            </div>
+                            <input type="range" id="paramInit" min="0.5" max="5.0" step="0.1" value="1.0">
+                        </div>
+
+                        <div class="equations-box">
+                            <h4>Ecuación Constitutiva</h4>
+                            <div id="viscoEq" class="latex-eq-display">
+                                \sigma(t) = \sigma_0 \cdot e^{-\frac{E}{\eta} t}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sim-display">
+                        <div class="plot-container">
+                            <svg id="viscoPlot" viewBox="0 0 600 350" class="interactive-plot">
+                                <!-- Axes and Curves generated by JS -->
+                            </svg>
+                        </div>
+                        <div class="schematic-container">
+                            <div class="model-schematic" id="schematicDisplay">
+                                <!-- Maxwell/Kelvin schematic SVGs inside JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulator 2: Carothers Equation -->
+            <div class="lab-panel" id="sim-carothers">
+                <div class="simulator-grid">
+                    <div class="sim-controls">
+                        <h3>Polimerización por Pasos: Ecuación de Carothers</h3>
+                        <p class="sim-instruction">Modifica el grado de conversión de los grupos reactivos ($p$) y la estequiometría ($r$) para ver cómo el Grado de Polimerización en Número ($X_n$) crece asintóticamente hacia el infinito solo cuando la conversión es casi total y la estequiometría perfecta.</p>
+
+                        <div class="control-group">
+                            <div class="slider-header">
+                                <span>Grado de Conversión (p):</span>
+                                <span class="slider-value" id="valP">0.950 (95.0%)</span>
+                            </div>
+                            <input type="range" id="paramP" min="0.800" max="0.999" step="0.001" value="0.950">
+                        </div>
+
+                        <div class="control-group">
+                            <div class="slider-header">
+                                <span>Relación de Estequiometría (r):</span>
+                                <span class="slider-value" id="valR">1.00 (Perfecta)</span>
+                            </div>
+                            <input type="range" id="paramR" min="0.800" max="1.000" step="0.005" value="1.000">
+                        </div>
+
+                        <div class="results-box">
+                            <div class="result-row">
+                                <span class="result-label">Grado de Polimerización ($X_n$):</span>
+                                <span class="result-number highlighted" id="resXn">20.0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Longitud de Cadena Estimada:</span>
+                                <span class="result-text" id="resLength">Macromolécula Corta / Oligómero</span>
+                            </div>
+                        </div>
+
+                        <div class="equations-box">
+                            <h4>Ecuación de Carothers</h4>
+                            <div class="latex-eq-display">
+                                X_n = \frac{1 + r}{1 + r - 2rp}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sim-display">
+                        <div class="plot-container">
+                            <svg id="carothersPlot" viewBox="0 0 600 350" class="interactive-plot">
+                                <!-- Chart lines dynamic via JS -->
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulator 3: Fox Equation -->
+            <div class="lab-panel" id="sim-fox">
+                <div class="simulator-grid">
+                    <div class="sim-controls">
+                        <h3>Ecuación de Fox: Copolímeros y Mezclas</h3>
+                        <p class="sim-instruction">Modifica las temperaturas de transición vítrea ($T_g$) de los homopolímeros 1 y 2, y varía su fracción en peso ($w_1$) para estimar y visualizar la temperatura de transición vítrea resultante ($T_g$) del copolímero.</p>
+
+                        <div class="control-group">
+                            <div class="slider-header">
+                                <span>Homopolímero 1 (ej. Poliestireno) T_g₁:</span>
+                                <span class="slider-value" id="valTg1">100 °C (373.15 K)</span>
+                            </div>
+                            <input type="range" id="paramTg1" min="-100" max="250" value="100">
+                        </div>
+
+                        <div class="control-group">
+                            <div class="slider-header">
+                                <span>Homopolímero 2 (ej. Polibutadieno) T_g₂:</span>
+                                <span class="slider-value" id="valTg2">-90 °C (183.15 K)</span>
+                            </div>
+                            <input type="range" id="paramTg2" min="-100" max="250" value="-90">
+                        </div>
+
+                        <div class="control-group">
+                            <div class="slider-header">
+                                <span>Fracción en Peso del Homopolímero 1 (w₁):</span>
+                                <span class="slider-value" id="valW1">0.50 (50.0%)</span>
+                            </div>
+                            <input type="range" id="paramW1" min="0" max="1" step="0.01" value="0.50">
+                        </div>
+
+                        <div class="results-box">
+                            <div class="result-row">
+                                <span class="result-label">T_g del Copolímero Resultante:</span>
+                                <span class="result-number highlighted" id="resTg">-28.9 °C</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Estado a T° Ambiente (25°C):</span>
+                                <span class="result-text color-glassy" id="resState">Gomoso / Elastómero</span>
+                            </div>
+                        </div>
+
+                        <div class="equations-box">
+                            <h4>Ecuación de Fox</h4>
+                            <div class="latex-eq-display">
+                                \frac{1}{T_g} = \frac{w_1}{T_{g1}} + \frac{w_2}{T_{g2}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sim-display">
+                        <div class="plot-container">
+                            <svg id="foxPlot" viewBox="0 0 600 350" class="interactive-plot">
+                                <!-- Chart dynamic via JS -->
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structural Gallery Section -->
+    <section id="galeria" class="section-container">
+        <div class="section-header">
+            <div class="section-subtitle">Microestructura e Identidad Química</div>
+            <h2 class="section-title">Galería Estructural de Polímeros</h2>
+            <p class="section-desc">Examina la unidad constitucional repetitiva (UCR) y las características moleculares clave de los termoplásticos, termoestables y fibras de ingeniería más representativos en el mercado.</p>
+        </div>
+
+        <div class="gallery-layout">
+            <div class="gallery-sidebar" id="polymerList">
+                <!-- Polymers list rendered dynamically -->
+            </div>
+            <div class="gallery-showcase glass-card" id="polymerShowcase">
+                <!-- Single Showcase Item rendered via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Footer -->
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-atom logo-icon"></i>
+                    <span class="logo-text">Macromoléculas<span>.io</span></span>
+                </div>
+                <p>Un portal interactivo diseñado con estándares avanzados para el aprendizaje, desarrollo y simulación de la ciencia de materiales macromoleculares.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Secciones</h4>
+                <a href="#hero">Inicio</a>
+                <a href="#capitulos">Resumen de Capítulos</a>
+                <a href="#laboratorio">Modeladores Físicos</a>
+                <a href="#galeria">Galería Química</a>
+            </div>
+            <div class="footer-credits">
+                <p>&copy; 2026 Macromoléculas.io. Tratado diseñado y desarrollado por <strong>Karyme ZR</strong>.</p>
+                <div class="social-icons">
+                    <a href="https://github.com/karyme-del-rey/Pruebasdelakabra" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="main.pdf" download aria-label="Descargar Libro PDF"><i class="fa-solid fa-file-pdf"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chapter Overlay Modal -->
+    <div class="modal-overlay" id="chapterModal">
+        <div class="modal-card glass-card">
+            <button class="modal-close" id="closeModal" aria-label="Cerrar ventana"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" id="modalBody">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
